@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>weapon2.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>weapon2</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+</PropertyList>
+
