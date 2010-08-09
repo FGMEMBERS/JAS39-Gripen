@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>mfd1.ac</path>
+
+  <animation>
+    <object-name>mfd1</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>mfd1</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.7 </green>
+      <blue>  0.5 </blue>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    </emission>
+  </animation>
+
+</PropertyList>
