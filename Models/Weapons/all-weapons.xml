@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon1.xml</path>
+    <offsets>
+      <x-m>  1.302 </x-m>
+      <y-m> -1.685 </y-m>
+      <z-m> -1.165 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon1.xml</path>
+    <offsets>
+      <x-m>  1.302 </x-m>
+      <y-m>  1.685 </y-m>
+      <z-m> -1.165 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon2.xml</path>
+    <offsets>
+      <x-m>  2.402 </x-m>
+      <y-m> -2.551 </y-m>
+      <z-m> -1.067 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon2.xml</path>
+    <offsets>
+      <x-m>  2.402 </x-m>
+      <y-m>  2.551 </y-m>
+      <z-m> -1.067 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon3.xml</path>
+    <offsets>
+      <x-m>  3.317 </x-m>
+      <y-m> -3.970 </y-m>
+      <z-m> -0.532 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/weapon3.xml</path>
+    <offsets>
+      <x-m>  3.317 </x-m>
+      <y-m>  3.970 </y-m>
+      <z-m> -0.532 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+
