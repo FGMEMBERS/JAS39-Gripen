@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>mfd3.ac</path>
+  <path>mfd.ac</path>
 
   <animation>
     <object-name>mfd3</object-name>
@@ -19,4 +19,13 @@
     </emission>
   </animation>
 
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/mfd3/radar2.xml</path>
+    <offsets>
+      <x-m>-0.003</x-m>
+      <y-m>0 </y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+ 
 </PropertyList>

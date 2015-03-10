@@ -5,6 +5,12 @@
   <path>interior.ac</path>
 
   <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>700</max-m>
+    </animation>
+  
+  <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>inttour</object-name>
@@ -50,6 +56,20 @@
       <z-m> -0.433 </z-m>
     </offsets>
   </model>
+  
+   <!-- Pilot invisible from internally -->
+
+    <animation>
+        <type>select</type>
+        <object-name>Pilote</object-name>
+		
+		<condition>
+<not>
+            <property>sim/current-view/internal</property>
+</not>
+        </condition>
+    </animation>		
+  
 
   <!-- Canopy -->
   <animation>

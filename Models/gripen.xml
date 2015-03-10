@@ -4,6 +4,9 @@
 
   <path>gripen.ac</path>
 
+   <!-- MP sound call -->
+  <sound><path>Aircraft/JAS39-Gripen/Sounds/mp-sound.xml</path></sound>
+  
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/JAS39-Gripen/Models/Liveries", 10);
@@ -87,57 +90,36 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
+	
+	  <!-- Pilot -->
+   <animation>
+        <type>material</type>
+        <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>bras</object-name>
+    <object-name>avantbras</object-name>
+    <object-name>main</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>texture-pilot</texture-prop>
+        <texture>fighter_pilot.png</texture>
+    </animation>
 
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
+<effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[6]</property>
+        <value>9</value>
+      </greater-than>
+	   <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
 
-  <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletG</object-name>
-    <object-name>voletD</object-name>
-    <object-name>tourverriere</object-name>
-    <object-name>pointe</object-name>
-    <object-name>canardG</object-name>
-    <object-name>canardD</object-name>
-    <object-name>derive</object-name>
-    <object-name>direction</object-name>
-    <object-name>porteA</object-name>
-    <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-  </effect>
+  <object-name>cockpit</object-name>
+    <object-name>verriere</object-name>
+  
+</effect>
+  
 
   <animation>
     <type>shader</type>
@@ -153,26 +135,10 @@
     <object-name>verriere</object-name>
   </animation>
 
-  <!-- Une ombre pour OSG -->
-  <model>
-    <name>shadowOSG</name>
-    <path>Aircraft/JAS39-Gripen/Models/shadow.xml</path>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
-
+ 
   <!-- Armement -->
   <model>
-    <path>Aircraft/JAS39-Gripen/Models/Weapons/all-weapons.xml</path>
+    <path>Aircraft/JAS39-Gripen/Models/Weapons/loads.xml</path>
     <offsets>
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>
@@ -192,17 +158,55 @@
 
   <!-- Flamme -->
   <model>
-    <path>Aircraft/JAS39-Gripen/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/Afterburner/Afterburner.xml</path>
     <offsets>
       <x-m>  7.025 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.345 </z-m>
+      <z-m> 5.5 </z-m>
     </offsets>
   </model>
+  
+  <!-- Sonic Boom -->
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/boom/fx.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+  </model>
+  
+  <!-- Vapour effects -->
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/Vapour/Vapour.xml</path>
+    <offsets>
+      <x-m>  -1 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/Vapour/Vapour2.xml</path>
+    <offsets>
+      <x-m>  1.5 </x-m>
+      <y-m>  -2.000 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+  </model>
+  
+   <model>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/Vapour/Vapour2.xml</path>
+    <offsets>
+      <x-m>  1.5 </x-m>
+      <y-m>  2.000 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+  </model>
+  
 
   <!-- Effets sur le sol -->
-  <!-- Roue avant -->
-  <model>
+  <!-- Roue avant
     <path>Aircraft/JAS39-Gripen/Models/Effects/ground/ground0.xml</path>
     <offsets>
       <x-m> -2.959 </x-m>
@@ -210,8 +214,10 @@
       <z-m> -2.333 </z-m>
     </offsets>
   </model>
-
-  <!-- Roue gauche -->
+ -->
+ <!-- Roue gauche 
+ <model>
+  
   <model>
     <path>Aircraft/JAS39-Gripen/Models/Effects/ground/ground1.xml</path>
     <offsets>
@@ -220,8 +226,8 @@
       <z-m> -2.305 </z-m>
     </offsets>
   </model>
-
-  <!-- Roue droite -->
+ -->
+  <!-- Roue droite 
   <model>
     <path>Aircraft/JAS39-Gripen/Models/Effects/ground/ground2.xml</path>
     <offsets>
@@ -230,10 +236,22 @@
       <z-m> -2.305 </z-m>
     </offsets>
   </model>
+-->
+
+<!-- nozzel -->
+
+<model>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/nozzles/Nozzles.xml</path>
+    <offsets>
+      <x-m>  -7.4 </x-m>
+      <y-m>  0.95 </y-m>
+      <z-m> -0.17 </z-m>
+    </offsets>
+  </model>
 
   <!-- Poussière -->
   <model>
-    <path>Aircraft/JAS39-Gripen/Models/Effects/smoke/smoke.xml</path>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/smoke/smokeL.xml</path>
     <offsets>
       <x-m>  7.025 </x-m>
       <y-m>  0.000 </y-m>
@@ -264,7 +282,7 @@
 
   <!-- Trail -->
   <model>
-    <path>Aircraft/JAS39-Gripen/Models/Effects/trail/trail.xml</path>
+    <path>Aircraft/JAS39-Gripen/Models/Effects/trail/trailL.xml</path>
     <offsets>
       <x-m>  7.025 </x-m>
       <y-m>  0.000 </y-m>
@@ -302,7 +320,7 @@
     <object-name>canardG</object-name>
     <object-name>canardD</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor> 25 </factor>
+    <factor> -25 </factor>
     <center>
       <x-m> -1.109 </x-m>
       <y-m>  0.000 </y-m>
@@ -335,7 +353,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>surface-positions/flap-pos-norm</property>
+    <property>surface-positions/aileron-pos-norm</property>
     <factor> 15 </factor>
     <axis>
       <x1-m>  4.161 </x1-m>
@@ -347,27 +365,12 @@
     </axis>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>canardG</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> 5 </factor>
-    <center>
-      <x-m> -1.109 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.298 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+ 
 
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>surface-positions/flap-pos-norm</property>
+    <property>surface-positions/aileron-pos-norm</property>
     <factor> -15 </factor>
     <axis>
       <x1-m>  4.083 </x1-m>
@@ -378,7 +381,7 @@
       <z2-m> -0.555 </z2-m>
     </axis>
   </animation>
-
+<!--
   <animation>
     <type>rotate</type>
     <object-name>canardD</object-name>
@@ -395,8 +398,12 @@
       <z> 0 </z>
     </axis>
   </animation>
+  
+  -->
 
   <!-- Volets -->
+  
+  <!-- Slats not fitted to model 
   <animation>
     <type>rotate</type>
     <object-name>voletG</object-name>
@@ -426,13 +433,13 @@
       <z2-m> -0.562 </z2-m>
     </axis>
   </animation>
-
+-->
   <!-- Gouverne de profondeur -->
   <animation>
     <type>rotate</type>
     <object-name>voletG</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> -15 </factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>15 </factor>
     <axis>
       <x1-m>  4.012 </x1-m>
       <y1-m> -2.332 </y1-m>
@@ -446,8 +453,8 @@
   <animation>
     <type>rotate</type>
     <object-name>voletD</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> -15 </factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 15 </factor>
     <axis>
       <x1-m>  3.940 </x1-m>
       <y1-m>  1.191 </y1-m>
@@ -458,6 +465,7 @@
     </axis>
   </animation>
 
+  <!--
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
@@ -472,7 +480,8 @@
       <z2-m> -0.553 </z2-m>
     </axis>
   </animation>
-
+  -->
+<!--
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
@@ -487,7 +496,7 @@
       <z2-m> -0.555 </z2-m>
     </axis>
   </animation>
-
+-->
   <!-- Compression -->
   <animation>
     <type>translate</type>
@@ -724,10 +733,23 @@
   </animation>
 
   <!-- Ajout des effets lumineux -->
+  
   <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/beacon.xml</path>
+<path>Aircraft/JAS39-Gripen/Models/light/light-cone.xml</path>
+
+
+<offsets>
+      <x-m>-3.3</x-m>
+      <y-m>0.15</y-m>
+      <z-m>-1.4</z-m>
+      <pitch-deg>-6.15</pitch-deg>
+      <heading-deg>0</heading-deg>    
+</offsets>
+</model>
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/light/StrobeWhite.xml</path>
     <offsets>
-      <x-m> 4.962 </x-m>
+      <x-m> 6.2 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 1.789 </z-m>
     </offsets>
@@ -745,74 +767,91 @@
   <model>
     <path>Aircraft/JAS39-Gripen/Models/light/RedLight.xml</path>
     <offsets>
-      <x-m>  3.499 </x-m>
-      <y-m> -3.696 </y-m>
-      <z-m> -0.489 </z-m>
+      <x-m>  -1.7 </x-m>
+      <y-m> -1.0 </y-m>
+      <z-m> -0.85 </z-m>
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/RedLight.xml</path>
-    <offsets>
-      <x-m>  3.499 </x-m>
-      <y-m> -3.696 </y-m>
-      <z-m> -0.534 </z-m>
-    </offsets>
-  </model>
+ 
 
   <model>
     <path>Aircraft/JAS39-Gripen/Models/light/GreenLight.xml</path>
     <offsets>
-      <x-m>  3.499 </x-m>
-      <y-m>  3.696 </y-m>
-      <z-m> -0.489 </z-m>
+         <x-m>  -1.7 </x-m>
+      <y-m> 1.0 </y-m>
+      <z-m> -0.85 </z-m>
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/GreenLight.xml</path>
-    <offsets>
-      <x-m>  3.499 </x-m>
-      <y-m>  3.696 </y-m>
-      <z-m> -0.534 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  3.599 </x-m>
-      <y-m> -3.696 </y-m>
-      <z-m> -0.489 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  3.599 </x-m>
-      <y-m> -3.696 </y-m>
-      <z-m> -0.534 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  3.599 </x-m>
-      <y-m>  3.696 </y-m>
-      <z-m> -0.489 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/JAS39-Gripen/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  3.599 </x-m>
-      <y-m>  3.696 </y-m>
-      <z-m> -0.354 </z-m>
-    </offsets>
-  </model>
+ <!-- low level wash -->
+ 
+   <model>
+	 <name>aircraft_wash_r</name>
+	 <path>Aircraft/JAS39-Gripen/Models/Effects/wash/aircraft_wash.xml</path>
+	 <condition>
+		 <equals>
+			 <property>controls/state/low_level</property>
+			 <value>1</value>
+		 </equals>
+	 </condition>
+	 <offsets>
+		 <x-m>25.000</x-m>
+		 <y-m>0</y-m>
+		 <z-m>0.0</z-m>
+		 <pitch-deg>0</pitch-deg>
+	 </offsets>
+ </model>
+  
+  <animation>
+	 <type>translate</type>
+	 
+	 <object-name>aircraft_wash_r</object-name>
+	 <property>position/altitude-agl-ft</property>
+	 <condition>
+		 <equals>
+			 <property>controls/state/low_level</property>
+			 <value>1</value>
+		 </equals>
+	 </condition>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>300.0</ind>
+			 <dep>-90</dep>
+		 </entry>
+	 </interpolation>
+	 
+	 <axis>
+		 <x>-1</x>
+		 <y>0</y>
+		 <z>1.0</z>
+	 </axis>
+	 
+ </animation>
+ 
+ <model>
+		<name>fire</name>
+		<path>Aircraft/JAS39-Gripen/Models/Effects/Engine/Fire.xml</path>
+		<condition>
+			<equals>
+				<property>sim/crashed</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>5.05</x-m>
+			<y-m>0.00</y-m>
+			<z-m>1.75</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>	
+ 
 
 </PropertyList>
 

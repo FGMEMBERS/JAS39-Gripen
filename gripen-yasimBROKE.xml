@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--  SAAB Jas 39 Gripen config based on the folowing data:-
+
+MAXIMUM SPEED: 
+JAS-39 (A):  1100 kph  (Mach 0.9) at sea level and 2150 kph (Mach  1.97) at 30 kft 
+JAS-39 (B):  1050 kph (Mach 0.86) at sea level and 2025 kph (Mach 1.86) at 30 kft
+JAS-39 (C):  1300 kph (Mach 1.06) at sea level and 2525 kph (Mach 2.31) at 30 kft
+JAS-39 (D):  1220 kph (Mach 1.0) at sea level and 2350 kph (Mach 2.15) at 30 kft 
+CRUISE SPEED (max performance without afterburner):  
+JAS-39 (A):  1000 kph  (Mach 0.92) at 30 kft 
+JAS-39 (B):  900 kph (Mach 0.82) at 30 kft
+JAS-39 (C):  1400 kph (Mach 1.28) at 30 kft
+JAS-39 (D):  1100 kph (Mach 1.01) at 30 kft 
+STALL SPEED: 
+JAS-39 (A):  180 kph 
+JAS-39 (B):  190 kph
+JAS-39 (C):  170 kph
+JAS-39 (D):  180 kph 
+CLIMB RATE: 
+JAS-39 (A):  5,000 meters per minute 
+JAS-39 (B):  4,500 meters per minute
+JAS-39 (C):  6,000 meters per minute
+JAS-39 (D):  5,500 meters per minute  
+CEILING: 
+JAS-39 (A):  16,000 m (52.5 kft) 
+JAS-39 (B):  15,700 m (51.5 kft)
+JAS-39 (C):  18,500 m (60.7 kft)
+JAS-39 (D):  17,250 m (56.5 kft) 
+MIN TAKE-OFF DISTANCE:  
+JAS-39 (A/B):  800 meters 
+JAS-39 (C/D):  650 meters 
+MIN LANDING DISTANCE:  
+JAS-39 (A,B):  600 meters with drag chute 
+JAS-39 (C,D):  550 meters with drag chute 
+DESIGNED G LIMITS: 
++9.0 to -3.0 g 
+RANGE: 
+Nominal:  JAS-39(A) - 1,600 km, JAS-39(B) - 1,450 km,  JAS-39(C) - 2,100 km,  JAS-39(D) - 1,911 km
+
+Maximum / Ferry:  JAS-39(A) - 3,000 km, JAS-39(B) - 2,718 km,  JAS-39(C) - 3,938 km,  JAS-39(D) - 3,583 km 
+Low Altitude:  JAS-39(A) - 960 km, JAS-39(B) - 870 km,  JAS-39(C) - 1,260 km,  JAS-39(D) - 1,147 km 
+STATISTICAL DATA:
+LENGTH: 
+14.1 m (A,C)
+14.8 m (B,D) 
+WINGSPAN: 
+8.4 m 
+HEIGHT: 
+4.5 m 
+WEIGHT (DRY): 
+Dry:  JAS-39(A) - 6,622 kg, JAS-39(B) - 6,850 kg,  JAS-39(C) - 6,250 kg,  JAS-39(D) - 6,350 kg
+
+Max Take-Off:  JAS-39(A) - 12,500 kg, JAS-39(B) - 13,100 kg,  JAS-39(C) - 14,250 kg,  JAS-39(D) - 14,750 kg 
+ ENGINE THRUST 
+JAS-39 (A,B):  1 x General Electric / Volvo Flyingmotor RM12 turbofan, 54 kN static thrust with 80.5 kN of afterburner 
+JAS-39 (C,D):  1 x General Electric / Volvo Flyingmotor RM13 turbofan with overtechnology, 70 kN of static thrust with 130 kN of afterburner  
+INTERNAL FUEL CAPACITY: 
+JAS-39 (A,C):  794 US gal (3,008 liters)  
+JAS-39 (B,D):  754 US gal (2,852 liters)
+
+ -->
+
+<airplane mass="13750">
+
+  <!-- Approach configuration -->
+  <approach speed="160" aoa="9">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
+    <control-setting axis="/controls/flight/flaps" value="0.4"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <control-setting axis="/controls/flight/speedbrake" value="0"/>
+    <control-setting axis="/controls/flight/slats" value="1"/>
+  </approach>
+
+  <!-- Cruise configuration.   -->
+   <cruise speed="660" alt="45000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.84"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <control-setting axis="/controls/flight/speedbrake" value="0"/>
+    <control-setting axis="/controls/flight/slats" value="0"/>
+  </cruise>
+
+  <!-- pilot eyepoint -->
+  <cockpit x="3.0" y="0.0" z="0.20"/>
+
+  <fuselage ax="3.95" ay="0" az="-0.736" bx="-4.5" by="0" bz="-0.45" width="1.342" midpoint= "1" taper="0.6" idrag="0.7"/>
+  <fuselage ax="6.3" ay="0" az="-1" bx="3.8" by="0" bz="-0.736" width="0.9" midpoint= "1" taper="0.1" idrag="0.7"/>
+  <fuselage ax="-4.4" ay="0" az="-0.45" bx="-7" by="0" bz="-0.35" width="1.342" midpoint= "0" taper="0.4" idrag="0.7"/>
+  
+   <fuselage ax="3" ay="0" az="0" bx="0" by="0" bz="0" width="0.8" midpoint= "0" taper="0.1" idrag="0.7"/>
+   <fuselage ax="5" ay="0" az="-0.736" bx="2.9" by="0" bz="0" width="0.8" midpoint= "1" taper="0.0" idrag="0.7" />
+  
+  
+  <fuselage ax="2.5" ay="-0.5" az="-0.636" bx="-4.5" by="0" bz="-0.45" width="1.1" midpoint= "1" taper="0.6" idrag="0.7" />
+  <fuselage ax="2.5" ay="0.5" az="-0.636" bx="-4.5" by="0" bz="-0.45" width="1.1" midpoint= "1" taper="0.6" idrag="0.7"/>
+
+  
+  
+  
+  <hstab x="1.55" y="0.80" z="-0.354"
+         chord="1.9"
+         length="1.95"
+         taper="0.24" 
+         sweep="48"
+		 incidence="1.6"
+         dihedral="7">
+    
+     <stall aoa="35" width="13" peak="1.5"/>
+   <flap0 start="0.001" end="1" lift="1.9" drag="1.4"/>
+
+<control-input axis="/controls/flight/elevator" control="FLAP0"/>
+<control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+<control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+<control-speed control="FLAP0" transition-time="0.8"/> -->
+
+       
+         <control-input axis="/controls/flight/speedbrake" control="FLAP0"/>
+
+         
+         <control-output control="FLAP0" prop="/surface-positions/speedbrake-pos-norm"/>
+
+         
+        <control-speed control="FLAP0" transition-time="5.0"/> -->
+		 
+		
+		 
+		
+  </hstab>
+<!--
+   <hstab x="-5.5" y="0.01" z="-0.5"
+         chord="1.7"
+         length="1"
+         taper="0.27" 
+         sweep="10"
+         dihedral="7">
+         <stall aoa="35" width="13" peak="1.5"/>
+   <flap0 start="0" end="1.0" lift="1.9" drag="1.3"/>
+         
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0" />
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0" />
+        
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+         
+
+  </hstab>
+-->
+  
+  <wing x="-2.088" y="0.738" z="-0.551"
+        chord="5.3"
+        length="3.6"
+        taper="0.19"
+        sweep="31"
+		incidence="1.6"
+        twist="-2.0"
+        
+        camber="0.05"
+		dihedral="-1.5">
+         <stall aoa="21" width="8" peak="1.3"/>
+    <slat start="0.2" end="0.95" aoa="6" lift="1.2" drag="1.2"/>
+    <flap0 start="0.02" end="0.425" lift="1.45" drag="1.0"/>
+	<flap1 start="0.425" end="0.95" lift="1.35" drag="1.0"/>
+    <spoiler start="0.54" end="0.86" lift="0.9" drag="1.4"/>
+        <control-input axis="/controls/flight/aileron" control="SPOILER" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="SPOILER" split="true"/>
+		<control-input axis="/controls/flight/flaps" control="FLAP1" />
+		<control-input axis="/controls/flight/elevator" control="FLAP0"/>
+	    <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>	
+	
+		
+<control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+
+         <control-output control="FLAP0" side="left" prop="surface-positions/left-elevator-pos-norm"/>
+  <control-output control="FLAP0" side="right" prop="surface-positions/right-elevator-pos-norm"/>
+  <control-output control="FLAP0" prop="surface-positions/elevator-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-flap-pos-norm"/>
+  <control-output control="FLAP1" side="right" prop="/surface-positions/right-flap-pos-norm"/>
+  <control-output control="FLAP1" prop="/surface-positions/flap-pos-norm"/>
+
+        
+		
+		 <control-output control="SPOILER" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+  <control-output control="SPOILER" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  <control-output control="SPOILER" prop="/surface-positions/aileron-pos-norm"/>
+        
+
+        <control-speed control="SLAT" transition-time="1.1"/>
+        <control-speed control="FLAP0" transition-time="1"/>
+		<control-speed control="FLAP1" transition-time="6"/>
+  </wing>
+
+  <vstab x="-4.593" y="0" z="0.157"
+         chord="3.239"
+         length="2.5"
+         taper="0.17"
+         sweep="31">
+         <stall aoa="27" width="10" peak="1.5"/>
+         <flap0 start="0" end=".8" lift="1.3" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+
+         <control-speed control="FLAP0" transition-time="1"/>
+  </vstab>
+
+  
+  <!--  Volvo Aero RM12 afterburning turbofan -->
+  
+  <jet x="-2.558" y="0.0" z="-0.349"
+       mass="2282"
+       thrust="12100"
+       afterburner="18100"
+       n1-idle="25" n1-max="100" n2-idle="30" n2-max="105"
+       exhaust-speed="1150"
+       rotation="0">
+       <actionpt x="-7.036" y="0.0" z="-0.349"/>
+      <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+<control-input axis="/controls/engines/engine[0]/throttle" src0="0.85" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+<control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
+ <control-speed control="THROTTLE" transition-time="3.1"/>
+ <control-speed control="REHEAT" transition-time="5.1"/>
+</jet>
+
+  <!-- gear -->
+  <!-- nose -->
+  <gear x="2.959" y="0.000" z="-2.333"
+        retract-time="7"
+       compression="0.7"
+        spring="1.1"
+        damp="1.4">
+        <control-input axis="/controls/flight/rudder" control="STEER" square="false"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- left main -->
+  <gear x="-2.013" y="1.134" z="-2.305"
+        retract-time="7"
+       compression="0.8"
+        spring="0.85"
+        damp="2">
+       <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+       <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+       <control-speed control="EXTEND" transition-time="7"/>
+       <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="-2.013" y="-1.134" z="-2.305"
+        retract-time="7"
+        compression="0.8"
+        spring="0.85"
+        damp="2">
+       <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+       <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+       <control-speed control="EXTEND" transition-time="7"/>
+       <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
+  </gear>
+
+<!-- Intenal Fuselage tanks -->
+<tank x="-0.5" y="0" z="-0.6" jet="true" capacity="1799"/>
+
+  <!-- left wing tanks -->
+  <tank x="-1.2" y="1.5" z="-0.6" jet="true" capacity="1799"/>
+  <!-- right wing tanks -->
+  <tank x="-1.2" y="-1.5" z="-0.6" jet="true" capacity="1799"/>
+  <!-- Drop Tanks - All guesswork - no data available on capacity -->
+  <tank x="-1" y="1.7" z="-1.1" jet="true" capacity="2204"/>
+ 
+  <tank x="-1" y="-1.7" z="-1.1" jet="true" capacity="2204"/> 
+
+  <!-- CG Théorique x=-2.088 y=0.0 z=-0.551
+  <ballast x="3.0" y="0.0" z="0.0" mass="900" /> -->
+  
+  <!-- Pilot -->
+<weight x="3" y="0" z="0.30" size="0.25" mass-prop="sim/weight[0]/weight-lb"/>
+
+  <!-- external loads -->
+  <!-- left 
+<weight x="-6.7" y="3.5" z="-0.4" size="0.25" mass-prop="sim/weight[1]/weight-lb"	/>
+<weight x="-6.2" y="2.4" z="-0.550" size="0.5" mass-prop="sim/weight[2]/weight-lb"/>
+<weight x="-1" y="1.7" z="-1.1" size="0.7" mass-prop="sim/weight[3]/weight-lb"/>
+<weight x="-1" y="1.7" z="-1.1" size="0.3" mass-prop="sim/weight[4]/weight-lb"/>
+  -->
+ <!--right 
+<weight x="-6.7" y="3.5" z="-0.4" size="0.3" mass-prop="sim/weight[5]/weight-lb"	/>
+<weight x="-1" y="1.7" z="-1.1"  size="0.7" mass-prop="sim/weight[6]/weight-lb"/>
+<weight x="-1" y="1.7" z="-1.1" size="0.5" mass-prop="sim/weight[7]/weight-lb"/>
+<weight x="-1" y="1.7" z="-1.1" size="0.25" mass-prop="sim/weight[8]/weight-lb"/>  
+  -->
+</airplane>

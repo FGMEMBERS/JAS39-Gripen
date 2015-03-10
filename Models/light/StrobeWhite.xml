@@ -2,51 +2,50 @@
 
 <PropertyList>
 
-  <path>WhiteLight.ac</path>
+<!-- white flashing beacon -->
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>Light</object-name>
-  </animation>
+<!-- rembrandt auto switching for glass -->
+  <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <condition>
+    <property>sim/rendering/rembrandt/enabled</property>
+  </condition>
+   <object-name>light</object-name>
+   <object-name>Light</object-name>
+  </effect>
 
-  <animation>
-    <type>alpha-test</type>
-    <alpha-factor>0.01</alpha-factor>
-  </animation>
+<!-- Turns off non rembrant lighting and effects -->
+<animation>
+        <type>select</type>
+       	<object-name>whitebeacon</object-name>
+		<condition>
+            <not>
+            <property>/sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+    </animation>	
 
-  <animation>
-    <type>billboard</type>
-    <object-name>Light</object-name>
-    <spherical type="bool">true</spherical>
-  </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>Light</object-name>
-    <condition>
-      <property>/sim/model/lights/sbc1/state</property>
-    </condition>
-  </animation>
 
-  <animation>
-    <type>material</type>
-    <object-name>Light</object-name>
-    <emission>
-      <red>   1.0 </red>
-      <green> 1.0 </green>
-      <blue>  1.0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-    </emission>
-  </animation>
 
-  <animation>
-    <type>dist-scale</type>
-    <object-name>Light</object-name>
-    <interpolation>
-      <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
-      <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
-      <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
-    </interpolation>
-  </animation>
+  <model>
+   <name>whitebeacon</name>
+  <path>Aircraft/JAS39-Gripen/Models/light/normal/StrobeWhite.xml</path>
+   <offsets>
+     <x-m>0</x-m>
+     <y-m>0</y-m>
+     <z-m>0</z-m>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>whitebeacon1</name>
+  <path>Aircraft/JAS39-Gripen/Models/light/remb/StrobeLight.xml</path>
+   <offsets>
+     <x-m>0</x-m>
+     <y-m>0</y-m>
+     <z-m>0</z-m>
+   </offsets>
+ </model>
 
 </PropertyList>

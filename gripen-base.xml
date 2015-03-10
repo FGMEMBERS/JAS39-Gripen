@@ -4,11 +4,17 @@
 
   <sim include="Nasal/views.xml">
  
-    <author>BARANGER Emmanuel</author>
-    <aircraft-version>0.2</aircraft-version>
-    <status>0.1 Alpha</status>
+    <author>BARANGER Emmanuel, StuartC</author>
+    <aircraft-version>0.7</aircraft-version>
+    <status>0.7 Alpha</status>
    
-    <fuel-fraction>0.75</fuel-fraction>
+    <fuel-fraction>1</fuel-fraction>
+	<rating>
+      <FDM type="int">     4 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
+      <model type="int">   2</model>
+    </rating>
   
     <startup>
       <splash-texture>Aircraft/JAS39-Gripen/gripen-splash.png</splash-texture>
@@ -19,11 +25,89 @@
     </sound>
 
     <model>
-      <path>Aircraft/JAS39-Gripen/Models/gripen.xml</path>
+      <path>Aircraft/JAS39-Gripen/Models/JAS-39C_Gripen.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
     </model>
+	
+	<submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/JAS39-Gripen/Models/Weapons/loads.xml</path>
+	 <path>Aircraft/JAS39-Gripen/submodels.xml</path>
+
+    </submodels>
+	
+	 <systems>
+        <autopilot>
+          <path>Aircraft/JAS39-Gripen/Systems/Autopilot.xml</path>
+        </autopilot>
+		 <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+      </systems>
+	  
+	  <mp-systems>
+<radar-enabled type="bool">true</radar-enabled>
+<ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+<combat-enabled type="bool">true</combat-enabled>
+</mp-systems>
+
+
+	  
+	 <rendering>
+			<redout>
+				<parameters>
+					<blackout-complete-g>9.1</blackout-complete-g>
+					<blackout-onset-g>7.5</blackout-onset-g>
+				</parameters>
+			</redout>
+		</rendering>  
+	  
+	<hud>
+      <path n="1">Aircraft/JAS39-Gripen/Hud/hud.xml</path>
+	  
+      <visibility n="0" type="bool">false</visibility>
+      <visibility n="1" type="bool">true</visibility>
+      <current-color>0</current-color>
+      <color>
+	<transparent type="bool">true</transparent>
+	<antialiased type="bool">true</antialiased>
+	<brightness type="float">1.0</brightness>
+	<alpha type="float">1.0</alpha>
+      </color>
+      <palette>
+	<color n="0">
+	  <red type="float">0.00</red>
+	  <green type="float">1.0</green>
+	  <blue type="float">0.00</blue>
+	</color>
+	<color n="1">
+	  <red type="float">1.0</red>
+	  <green type="float">0.0</green>
+	  <blue type="float">0.0</blue>
+	</color>
+    <color n="2">
+	  <red type="float">0.0</red>
+	  <green type="float">0.0</green>
+	  <blue type="float">1.0</blue>
+	</color>
+    <color n="3">
+	  <red type="float">1.0</red>
+	  <green type="float">1.0</green>
+	  <blue type="float">1.0</blue>
+	</color>
+      </palette>
+
+  <clipping>
+    <left type="double">-75</left>
+    <right type="double">70</right>
+    <top type="double">-35</top>
+    
+	  <bottom type="double">-165</bottom>
+     </clipping>
+
+    </hud>  
 
     <!-- Flap settings -->
     <flaps>
@@ -57,6 +141,260 @@
       <max-lb>400</max-lb>
       <min-lb>180</min-lb>
     </weight>
+	
+<!-- External Loads -->	
+
+<weight n="1">
+<name>pylon1.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+
+</weight>
+
+<weight n="2">
+<name>pylon2.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>335</lbs>
+</opt>
+<opt>
+<name>Meteor</name>
+<lbs>407</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>560</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+</weight>
+
+<weight n="3">
+<name>pylon3.L</name>
+<tank>3</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>396 gal Droptank</name>
+<lbs>245.0</lbs>
+<gals>396</gals>
+</opt>
+<opt>
+<name>211 gal Droptank</name>
+<lbs>204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>335</lbs>
+</opt>
+<opt>
+<name>Meteor</name>
+<lbs>407</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>560</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+</weight>
+
+<weight n="4">
+<name>pylon4.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+</weight>
+
+<weight n="5">
+<name>pylon4.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+</weight>
+
+<weight n="6">
+<name>pylon3.R</name>
+<tank>4</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>396 gal Droptank</name>
+<lbs>245.0</lbs>
+<gals>396</gals>
+</opt>
+<opt>
+<name>211 gal Droptank</name>
+<lbs>204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>335</lbs>
+</opt>
+<opt>
+<name>Meteor</name>
+<lbs>407</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>560</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+</weight>
+
+<weight n="7">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>335</lbs>
+</opt>
+<opt>
+<name>Meteor</name>
+<lbs>407</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>560</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+</weight>
+
+<weight n="8">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>IRIS-T</name>
+<lbs>192.684</lbs>
+</opt>
+
+<opt>
+<name>AIM-9</name>
+<lbs>188</lbs>
+</opt>
+</weight>
+
+
+	
 
     <help>
       <title>SAAB Jas 39 Gripen</title>
@@ -64,17 +402,166 @@
         <name>d</name>
         <desc>Open/Close canopy</desc>
       </key>
+	   <key>
+        <name>}</name>
+        <desc>Start up/Shut Down engine</desc>
+      </key>
     </help>
 
     <menubar include="Dialogs/gripen-menu.xml"/>
 
   </sim>
+  
+   <systems>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems> 
 
   <environment>
     <turbulence>
       <use-cloud-turbulence>true</use-cloud-turbulence>
     </turbulence>
   </environment>
+  
+  <controls>
+	
+	<gear>
+		<brake-parking type="double">1.0</brake-parking>
+	</gear>  
+	<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			<station n="7">
+				<release type="bool">false</release>
+			</station>
+			<station n="8">
+				<release type="bool">false</release>
+			</station>
+			
+</armament>	
+		
+</controls>
+
+<instrumentation>
+
+<rwr>
+<display-lighting-intens type="double">0.4</display-lighting-intens>
+<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+</rwr>
+
+<enav><selected type="int">3</selected></enav>
+<radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+
+
+      <!-- inicio en pruebas -->
+	<enabled type="bool">true</enabled>
+	<az-field type="double">120</az-field>
+	<range type="double">150</range>
+	<range-selected type="double">50</range-selected>
+	<radar2-range type="double">150</radar2-range>
+	<display-rdr type="bool">true</display-rdr>
+	<radar-standby type="int">3</radar-standby>
+	<mode>
+	    <rws type="bool">true</rws>
+	    <tws-auto type="bool">false</tws-auto>
+	</mode>
+
+ </radar> 
+
+    <terrain-radar>
+      <hi-elev>
+        <alt-ft type="double">-9999.9</alt-ft>
+        <lat-deg type="double">-9999.9</lat-deg>
+        <lon-deg type="double">-9999.9</lon-deg>
+        <dist-m type="double">-9999.9</dist-m>
+        <collision-status type="string">initialised</collision-status>
+      </hi-elev>
+      <settings>
+        <mode type="string">extend</mode>
+        <state type="string">off</state>
+        <range-m type="double">2500</range-m>
+        <step-m type="double">250</step-m>
+        <max-climb-rate-fps type="double">120</max-climb-rate-fps>
+        <hi-elev-markers type="bool">false</hi-elev-markers>
+      </settings>
+    </terrain-radar>
+	<MDEF>
+  <subsystem-selected type="string">aids</subsystem-selected>
+ </MDEF>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+	<tacan>
+	 <power type="bool">1</power>
+	</tacan>
+  <warnings>
+   <warning-suppress type="bool">false</warning-suppress>
+   <attention-lights type="bool">false</attention-lights>
+   <signals>
+    <cat-1-warning type="bool">false</cat-1-warning>
+	<cat-2-warning type="bool">false</cat-2-warning> 
+	<cat-3-warning type="bool">false</cat-3-warning> 
+	<cat-4-warning type="bool">false</cat-4-warning>   
+   </signals>
+   <flags>
+    <gear-limit type="bool">true</gear-limit>
+   </flags>
+  </warnings>
+  
+ <efis>
+
+			<ecam>
+					<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+					<display-mode type="string">VOR</display-mode>
+					<display-mode-knob type="int">2</display-mode-knob>
+					<display-range type="int">40</display-range>
+				
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+			</input>
+
+		
+		</efis>
+  </instrumentation>
+
 
   <engines>
     <engine n="0">
@@ -87,9 +574,26 @@
     <fuel>
       <tank n="0">
         <tank-num type="int">0</tank-num>
-        <level-gal_us archive="y">2070</level-gal_us>
+        <level-gal_us archive="y">264.6</level-gal_us>
       </tank>
+	  <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">264.6</level-gal_us>
+      </tank>
+	  <tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">264.6</level-gal_us>
+      </tank>
+	  <tank n="3">
+        <name>left wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="4">
+        <name>right wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank> 
     </fuel>
+   
   </consumables>
 
   <input>
@@ -104,6 +608,49 @@
     <doors>
       <file>Aircraft/JAS39-Gripen/Nasal/doors.nas</file>
     </doors>
+	 <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+	<radar>
+<file>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/Radar/radar.nas</file> 
+    </radar>
+<radar2>
+<file>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/Radar/radar2.nas</file>
+</radar2>
+	<aar> 
+       <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+	<guns>
+      <file>Aircraft/JAS39-Gripen/Nasal/weapons.nas</file>
+      <file>Aircraft/JAS39-Gripen/Nasal/revi.nas</file>
+</guns>	
+<low>
+<file>Aircraft/JAS39-Gripen/Nasal/low.nas</file>
+</low>
+<engines>
+      <file>Aircraft/JAS39-Gripen/Nasal/generic-yasim-engine.nas</file>
+      <script>
+        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        setlistener("sim/signals/fdm-initialized", func
+        {
+          engine1.init();
+        }, 0, 0);
+       </script>
+    </engines>
+	
+	<radar>
+<file>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/mfd3/radar.nas</file> 
+    </radar>
+<radar2>
+<file>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/mfd3/radar2.nas</file>
+</radar2>
+<rwr>
+ <file>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/mfd3/rwr.nas</file>
+</rwr> 
+<terrain-map>
+ <file>Aircraft/JAS39-Gripen/Nasal/terrain-map.nas</file>
+ </terrain-map>
+
   </nasal>
 
 </PropertyList>

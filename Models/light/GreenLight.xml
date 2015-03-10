@@ -2,43 +2,52 @@
 
 <PropertyList>
 
-  <path>GreenLight.ac</path>
+ <!-- gree navigation lighting -->
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>Light</object-name>
-  </animation>
+ <!-- rembrandt auto switching for glass -->
+  <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <condition>
+    <property>sim/rendering/rembrandt/enabled</property>
+  </condition>
+  
+  <object-name>light</object-name>
+   <object-name>Light</object-name>
+  
+  
+</effect>
 
-  <animation>
-    <type>alpha-test</type>
-    <alpha-factor>0.01</alpha-factor>
-  </animation>
+<!-- Turns off non rembrant lighting  -->
+<animation>
+        <type>select</type>
+         
+	<object-name>GreenLight</object-name>
+	
+		<condition>
+            <not>
+            <property>/sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+    </animation>		
 
-  <animation>
-    <type>billboard</type>
-    <object-name>Light</object-name>
-    <spherical type="bool">true</spherical>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>Light</object-name>
-    <emission>
-      <red>   1.0 </red>
-      <green> 1.0 </green>
-      <blue>  1.0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-    </emission>
-  </animation>
-
-  <animation>
-    <type>dist-scale</type>
-    <object-name>Light</object-name>
-    <interpolation>
-      <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
-      <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
-      <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
-    </interpolation>
-  </animation>
+ <model>
+  <name>GreenLight</name>
+    <path>Aircraft/JAS39-Gripen/Models/light/normal/GreenLight.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m> 0 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+  <name>GreenLight2</name>
+    <path>Aircraft/JAS39-Gripen/Models/light/remb/NavLightR.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0 </z-m>
+    </offsets>
+  </model>
 
 </PropertyList>

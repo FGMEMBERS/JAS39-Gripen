@@ -19,6 +19,47 @@
      <script>doors.doorsystem.crewexport();</script>
     </binding>
    </key>
+   
+   <key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>guns.fire_MG()</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>guns.stop_MG()</script>
+      </binding>
+    </mod-up>
+  </key>
+  
+   <key n="108">
+	 <name>l</name>
+     <desc>Trigger flare release</desc>
+     <binding>
+      <command>property-toggle</command>
+      <property>ai/submodels/submodel/flare-release</property>
+      <value type="bool">true</value>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>property-assign</command>
+      <property>ai/submodels/submodel/flare-release</property>
+       <value type="bool">false</value>
+      </binding>
+     </mod-up>
+    </key>
+	
+	 <key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+	<binding>
+		<command>nasal</command>
+		<script>engines.engine1.autostart();</script>
+	</binding>
+  </key>
 
 </PropertyList>
 

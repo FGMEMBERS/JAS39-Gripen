@@ -30,6 +30,22 @@
         <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
     </config>
   </view>
+  
+   
+	   <view n="101">
+	   <name>Pilot cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+         <x-offset-m archive="y">  0.000 </x-offset-m>	<!-- right -->
+        <y-offset-m archive="y">  0.051 </y-offset-m>	<!-- up    -->
+        <z-offset-m archive="y"> -3.3 </z-offset-m>	<!-- back  -->
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>180</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
 
   <view n="1">
     <config>

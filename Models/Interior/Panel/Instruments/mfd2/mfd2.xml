@@ -2,21 +2,20 @@
 
 <PropertyList>
 
-  <path>mfd2.ac</path>
+  <path>mfd.ac</path>
 
-  <animation>
-    <object-name>mfd2</object-name>
-  </animation>
+  
 
-  <animation>
-    <type>material</type>
-    <object-name>mfd2</object-name>
-    <emission>
-      <red>   0.8 </red>
-      <green> 0.7 </green>
-      <blue>  0.5 </blue>
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-    </emission>
-  </animation>
-
+   
+  <model>
+    <path>Aircraft/JAS39-Gripen/Models/Interior/Panel/Instruments/mfd2/res/terrain-map-pixel.xml</path>
+	<offsets>
+       <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+	  <pitch-deg>0</pitch-deg>
+	  <pitch-offset>0</pitch-offset>
+    </offsets>
+  </model>
+  
 </PropertyList>
