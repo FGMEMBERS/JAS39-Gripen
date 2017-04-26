@@ -6,6 +6,24 @@
   <sim>
     <description>SAAB Jas 39 Gripen</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+
+    <tags>
+      <tag>fighter</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+      <tag>2010s</tag>
+      <tag>delta</tag>
+      <tag>canard</tag>
+      <tag>retractable-gear</tag>
+      <tag>glass-cockpit</tag>
+      <tag>hud</tag>
+      <tag>ifr</tag>
+      <tag>refuel</tag>
+      <tag>supersonic</tag>
+      <tag>afterburner</tag>
+      <tag>jet</tag>
+      <tag>single-engine</tag>
+    </tags>
   </sim>
 
 </PropertyList>
